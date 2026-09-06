@@ -1,8 +1,7 @@
 ﻿`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 과제 6.9: Full Adder 시뮬레이션 테스트벤치
-//
-// 요구사항: input을 3'b000부터 3'b111까지 변경하며 파형 확인
+// Module Name: tb_full_adder
+// Description: Testbench for full_adder module (3-bit input sweep)
 //////////////////////////////////////////////////////////////////////////////////
 
 module tb_full_adder;
@@ -20,7 +19,6 @@ module tb_full_adder;
     integer i;
 
     initial begin
-        // 3'b000 ~ 3'b111 순차 검증 (20ns 간격)
         for (i = 0; i < 8; i = i + 1) begin
             {DIP1, DIP2, DIP3} = i[2:0];
             #20;

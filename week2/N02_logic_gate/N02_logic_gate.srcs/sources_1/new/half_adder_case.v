@@ -1,34 +1,33 @@
 ﻿`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 과제 6.6: Half Adder (case문 기반 구현)
-//
-// case ({DIP1, DIP2}) 동작 정의
+// Module Name: half_adder_case
+// Description: Half Adder implementation using case behavioral statement
 //////////////////////////////////////////////////////////////////////////////////
 
 module half_adder_case (
-    input  wire DIP1, // 입력 A (Switch 1)
-    input  wire DIP2, // 입력 B (Switch 2)
-    output reg  LED1, // 출력 Sum (S)
-    output reg  LED2  // 출력 Carry (C)
+    input  wire DIP1, // Input A
+    input  wire DIP2, // Input B
+    output reg  LED1, // Sum
+    output reg  LED2  // Carry
 );
 
     always @(*) begin
         case ({DIP1, DIP2})
             2'b00: begin
-                LED1 = 1'b0; // Sum
-                LED2 = 1'b0; // Carry
+                LED1 = 1'b0;
+                LED2 = 1'b0;
             end
             2'b01: begin
-                LED1 = 1'b1; // Sum
-                LED2 = 1'b0; // Carry
+                LED1 = 1'b1;
+                LED2 = 1'b0;
             end
             2'b10: begin
-                LED1 = 1'b1; // Sum
-                LED2 = 1'b0; // Carry
+                LED1 = 1'b1;
+                LED2 = 1'b0;
             end
             2'b11: begin
-                LED1 = 1'b0; // Sum
-                LED2 = 1'b1; // Carry
+                LED1 = 1'b0;
+                LED2 = 1'b1;
             end
             default: begin
                 LED1 = 1'b0;
